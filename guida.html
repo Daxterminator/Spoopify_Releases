@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guida introduttiva – Spoopify</title>
+<link rel="icon" href="icona.png">
+<style>
+  :root { --bg: #f6f6f8; --card: #ffffff; --text: #1b1b1f; --muted: #62626b; --line: #e2e2e8; --accent: #6a4fd8; --accent-bg: #efebfd; --info-bg: #eef3fb; --info: #24456f; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #131317; --card: #1c1c22; --text: #ececf1; --muted: #a2a2ad; --line: #2c2c35; --accent: #a996ff; --accent-bg: #2a2545; --info-bg: #1b2636; --info: #b9cff0; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 15.5px/1.6 "Segoe UI", system-ui, sans-serif; }
+  main { max-width: 820px; margin: 0 auto; padding: 36px 16px 56px; }
+  header { display: flex; align-items: center; gap: 16px; padding-bottom: 20px; border-bottom: 1px solid var(--line); margin-bottom: 24px; }
+  header img { width: 56px; height: 56px; }
+  header h1 { font-size: 26px; font-weight: 600; margin: 0; }
+  header p { margin: 2px 0 0; color: var(--muted); }
+  nav { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-bottom: 28px; font-size: 14.5px; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; }
+  h2 { font-size: 19px; font-weight: 600; margin: 0 0 12px; }
+  h3 { font-size: 15.5px; font-weight: 600; margin: 18px 0 6px; }
+  p { margin: 6px 0; }
+  ol, ul { padding-left: 22px; margin: 6px 0; }
+  li { margin: 3px 0; }
+  code, kbd { font-family: "Cascadia Mono", Consolas, monospace; font-size: 13.5px; background: var(--accent-bg); padding: 1px 6px; border-radius: 4px; }
+  .ui { font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+  th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+  td:first-child { width: 34%; }
+  .info { background: var(--info-bg); color: var(--info); border-radius: 8px; padding: 10px 14px; margin-top: 12px; font-size: 14.5px; }
+  footer { color: var(--muted); font-size: 13px; text-align: center; margin-top: 28px; }
+  .torna { margin: 0 0 18px; font-size: 14.5px; } .torna a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+<main>
+  <p class="torna"><a href="./">‹ Spoopify</a></p>
+  <header>
+    <img src="icona.png" alt="">
+    <div><h1>Spoopify</h1><p>Guida introduttiva</p></div>
+  </header>
+
+  <nav>
+    <a href="#requisiti">Requisiti di sistema</a>
+    <a href="#avvio">Primo avvio</a>
+    <a href="#libreria">Libreria musicale</a>
+    <a href="#android">Spoopify per Android</a>
+    <a href="#destinazioni">Destinazioni</a>
+    <a href="#generi">Generi musicali</a>
+    <a href="#problemi">Risoluzione dei problemi</a>
+    <a href="#aggiornamenti">Aggiornamenti</a>
+    <a href="#disinstallazione">Disinstallazione</a>
+  </nav>
+
+  <section id="requisiti">
+    <h2>Requisiti di sistema</h2>
+    <ul>
+      <li>Windows 10 o Windows 11 (64 bit)</li>
+      <li>Python 3.10 o versione successiva (installato automaticamente dal programma di installazione, se non presente)</li>
+      <li>Connessione a Internet per il primo avvio, la ricerca e il download dei brani</li>
+      <li>Per l'app mobile: dispositivo Android connesso alla stessa rete Wi-Fi del computer</li>
+    </ul>
+  </section>
+
+  <section id="avvio">
+    <h2>Primo avvio</h2>
+    <ol>
+      <li>Avviare <span class="ui">Spoopify</span> dal menu Start o dal collegamento sul desktop.</li>
+      <li>Al primo avvio Spoopify scarica i componenti necessari. L'operazione richiede circa un minuto.</li>
+      <li>Spoopify si apre nel browser predefinito all'indirizzo <code>http://spoopify.localhost</code>. L'icona di Spoopify viene aggiunta all'area di notifica della barra delle applicazioni.</li>
+    </ol>
+    <p>Chiudendo la scheda del browser, Spoopify resta disponibile nell'area di notifica. Il menu dell'icona, aperto con il pulsante destro del mouse, consente di riaprirlo o chiuderlo.</p>
+  </section>
+
+  <section id="libreria">
+    <h2>Libreria musicale</h2>
+    <p>Al primo avvio viene richiesta la cartella della libreria musicale:</p>
+    <ul>
+      <li><span class="ui">Crea nuova cartella</span>: crea la cartella <code>Musica\Spoopify</code>.</li>
+      <li><span class="ui">Usa una cartella esistente</span>: utilizza una cartella che contiene già file MP3. Tag, copertine e generi sono salvati nei file e vengono riconosciuti automaticamente.</li>
+    </ul>
+    <p>La cartella è modificabile in qualsiasi momento in <span class="ui">Impostazioni</span> &gt; <span class="ui">Libreria</span>.</p>
+
+    <h3>Importare la libreria da un altro computer</h3>
+    <p>Se un altro computer della rete locale utilizza Spoopify, la sua libreria può essere importata senza copiare i file manualmente.</p>
+    <ol>
+      <li>Sul computer di origine, attivare <span class="ui">Spoopify Sync</span> da <span class="ui">Sincronizza</span> o dal menu dell'icona nell'area di notifica.</li>
+      <li>Su questo computer, aprire <span class="ui">Sincronizza</span> &gt; <span class="ui">Ricevi da un altro PC</span>.</li>
+      <li>Selezionare <span class="ui">Cerca</span>, scegliere il computer di origine e quindi <span class="ui">Ricevi</span>.</li>
+    </ol>
+    <p>Le importazioni successive trasferiscono solo i brani nuovi o modificati. Gli aggiornamenti di Spoopify vengono scaricati da Internet (vedi <a href="#aggiornamenti">Aggiornamenti</a>).</p>
+  </section>
+
+  <section id="android">
+    <h2>Spoopify per Android</h2>
+    <p>Spoopify per Android sincronizza la libreria sul dispositivo per l'ascolto anche offline. Il dispositivo e il computer devono essere connessi alla stessa rete Wi-Fi.</p>
+
+    <h3>Installazione tramite codice QR</h3>
+    <ol>
+      <li>In Spoopify, aprire <span class="ui">Sincronizza</span> nella barra superiore e selezionare <span class="ui">Collega un telefono</span>. Viene visualizzata la pagina di Spoopify Sync con un codice QR.</li>
+      <li>Inquadrare il codice QR con la fotocamera del dispositivo e aprire il collegamento.</li>
+      <li>Toccare <span class="ui">Scarica l'app (APK)</span>. Se Chrome segnala che il file potrebbe essere dannoso, toccare <span class="ui">Scarica comunque</span>.</li>
+      <li>Aprire il file scaricato. Se richiesto, consentire l'installazione di app da Chrome, quindi toccare <span class="ui">Installa</span>.</li>
+      <li>Se Google Play Protect segnala un'app non riconosciuta, toccare <span class="ui">Installa comunque</span>.</li>
+    </ol>
+    <p>Spoopify per Android è distribuito direttamente e non tramite Google Play: per questo motivo vengono mostrati gli avvisi precedenti.</p>
+
+    <h3>Installazione manuale</h3>
+    <p>Copiare il file <code>Spoopify.apk</code> sul dispositivo tramite cavo USB e aprirlo dal dispositivo. Il file è disponibile nel menu Start in <span class="ui">Spoopify per Android (APK)</span>.</p>
+
+    <h3>Sincronizzazione</h3>
+    <ol>
+      <li>Aprire Spoopify sul dispositivo e consentire le notifiche, necessarie per i controlli di riproduzione.</li>
+      <li>Il computer viene rilevato automaticamente. In alternativa, inserire in <span class="ui">Opzioni</span> l'indirizzo mostrato nella pagina di Spoopify Sync.</li>
+      <li>Selezionare i contenuti da sincronizzare (intera libreria, tag o destinazione) e toccare <span class="ui">Sincronizza</span>.</li>
+    </ol>
+    <p>Le sincronizzazioni successive trasferiscono solo le differenze. Spoopify Sync entra in sospensione dopo 10 minuti di inattività e viene riattivato automaticamente dal dispositivo. Per avviarlo insieme a Spoopify, attivare l'opzione <span class="ui">Avvia Spoopify Sync con Spoopify</span> in <span class="ui">Sincronizza</span>.</p>
+  </section>
+
+  <section id="destinazioni">
+    <h2>Destinazioni</h2>
+    <p>Le destinazioni mantengono una copia filtrata della libreria in un'altra cartella, ad esempio su un'unità USB, una scheda SD o nella cartella musicale di un gioco.</p>
+    <ol>
+      <li>Nella libreria, applicare il filtro desiderato.</li>
+      <li>Selezionare <span class="ui">Esporta</span> &gt; <span class="ui">Nuova destinazione</span>. Il filtro attivo viene applicato alla destinazione.</li>
+      <li>Indicare la cartella con <span class="ui">Scegli</span> oppure inserirne il percorso.</li>
+      <li>Selezionare <span class="ui">Sincronizza</span>, verificare le modifiche proposte e confermare.</li>
+    </ol>
+    <p>Spoopify modifica solo i file che ha copiato nella destinazione. Gli altri file presenti nella cartella non vengono modificati.</p>
+  </section>
+
+  <section id="generi">
+    <h2>Generi musicali</h2>
+    <p>Spoopify assegna automaticamente il genere ai brani scaricati. Per un riconoscimento più accurato è possibile utilizzare una chiave API di Last.fm (gratuita, richiede un account Last.fm):</p>
+    <ol>
+      <li>Creare una chiave API su <code>last.fm/api</code>.</li>
+      <li>In Spoopify, aprire <span class="ui">Impostazioni</span> &gt; <span class="ui">Download</span> e inserire la chiave in <span class="ui">Chiave API Last.fm</span>.</li>
+    </ol>
+  </section>
+
+  <section id="problemi">
+    <h2>Risoluzione dei problemi</h2>
+    <table>
+      <tr><th>Problema</th><th>Soluzione</th></tr>
+      <tr><td>Spoopify non si avvia</td><td>Verificare che sia installato Python 3.10 o versione successiva (Microsoft Store o python.org), quindi avviare di nuovo Spoopify. I dettagli dell'errore sono registrati in <code>soundtrack\soundtrack.log</code> nella cartella di installazione.</td></tr>
+      <tr><td>La pagina non si apre all'indirizzo <code>spoopify.localhost</code></td><td>Se la porta 80 è utilizzata da un altro programma, Spoopify usa l'indirizzo <code>http://spoopify.localhost:8765</code>.</td></tr>
+      <tr><td>Il dispositivo Android non rileva il computer</td><td>
+        <ul>
+          <li>Verificare che il dispositivo e il computer siano connessi alla stessa rete Wi-Fi.</li>
+          <li>In Windows, impostare la rete come <span class="ui">Privata</span>.</li>
+          <li>Se richiesto da Windows, consentire a Python l'accesso alle reti private.</li>
+          <li>Se durante l'installazione non è stata configurata la regola del firewall, eseguire <code>spoopify-android\Apri firewall.cmd</code> come amministratore.</li>
+          <li>Inserire manualmente l'indirizzo mostrato nella pagina di Spoopify Sync.</li>
+        </ul></td></tr>
+      <tr><td>La finestra di selezione della cartella non è visibile</td><td>La finestra potrebbe essere aperta dietro il browser ed è disponibile nella barra delle applicazioni.</td></tr>
+    </table>
+    <div class="info">Le impostazioni di aspetto (tema, colori, dimensione delle icone) sono salvate nel browser e non vengono trasferite su altri browser o computer.</div>
+  </section>
+
+  <section id="aggiornamenti">
+    <h2>Aggiornamenti</h2>
+    <p>Spoopify verifica periodicamente la disponibilità di nuove versioni. Quando è disponibile un aggiornamento, nella barra superiore compare il pulsante <span class="ui">Aggiorna</span>. La verifica può essere eseguita anche da <span class="ui">Impostazioni</span> &gt; <span class="ui">Novità</span> &gt; <span class="ui">Cerca aggiornamenti</span>.</p>
+    <p>Ogni aggiornamento è firmato digitalmente e viene installato solo se la firma risulta valida. Prima dell'installazione viene creata una copia di sicurezza, ripristinata automaticamente in caso di errore. Al riavvio, le modifiche introdotte sono riepilogate nella finestra <span class="ui">Novità</span>.</p>
+  </section>
+
+  <section id="disinstallazione">
+    <h2>Disinstallazione</h2>
+    <p>Aprire <span class="ui">Impostazioni di Windows</span> &gt; <span class="ui">App</span> &gt; <span class="ui">App installate</span>, selezionare <span class="ui">Spoopify</span> e quindi <span class="ui">Disinstalla</span>. La libreria musicale non viene eliminata.</p>
+  </section>
+
+  <footer>Spoopify · Guida introduttiva</footer>
+</main>
+</body>
+</html>

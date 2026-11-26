@@ -850,10 +850,13 @@
     if (im.dataset.k === k) return;
     im.dataset.k = k; im.classList.remove('ok');
     im.onload = () => im.classList.add('ok');
-    im.onerror = () => im.remove();
+    // un errore di rete non deve lasciare il riquadro vuoto: due nuovi tentativi, poi si rinuncia
+    let tries = 0;
+    im.onerror = () => { if (im.dataset.k !== k) return; if (++tries > 2) return im.remove();
+      setTimeout(() => { if (im.dataset.k === k) im.src = COV[k][0] + '?r=' + tries; }, 1200 * tries); };
     im.src = COV[k][0];
   };
-  document.querySelectorAll('[data-k]').forEach(el => cover(el, el.dataset.k, !el.closest('.hero')));
+  document.querySelectorAll('[data-k]').forEach(el => cover(el, el.dataset.k, false));  // poche e piccole: subito, senza caricamento differito
   // collage: sequenza pseudo-casuale fissa (stessa disposizione a ogni visita), senza copertine uguali affiancate
   const fill = (el, n, cols, seed, lazy) => {
     if (!el) return;
